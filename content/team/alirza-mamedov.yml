@@ -1,11 +1,19 @@
 url: alirza-mamedov
 order: 3
-name: { uk: Алірза Мамедов, en: Alirza Mamedov }
+name:
+  uk: Алірза Мамедов
+  en: Alirza Mamedov
 role:
-  uk: Викладач, кандидат технічних наук, доцент, декан факультету урбаністики та просторового планування
-  en: Lecturer, PhD, Associate Professor, Dean of the Faculty of Urbanism and Spatial Planning
+  uk: Викладач, кандидат технічних наук, доцент, декан факультету урбаністики та
+    просторового планування
+  en: Lecturer, PhD, Associate Professor, Dean of the Faculty of Urbanism and
+    Spatial Planning
 bio:
-  uk: Спеціалізується на територіальному та міському плануванні й регенерації. Викладає модуль про досвід ЄС у плануванні на основі спадщини та відповідає за сайт проєкту.
-  en: Specialises in territorial and city-level planning and regeneration. Teaches the module on EU experience in heritage-based planning and leads the project website.
-photo: ""
-email: ""
+  uk: Спеціалізується на територіальному та міському плануванні й регенерації.
+    Викладає модуль про досвід ЄС у плануванні на основі спадщини та відповідає
+    за сайт проєкту.
+  en: Specialises in territorial and city-level planning and regeneration. Teaches
+    the module on EU experience in heritage-based planning and leads the project
+    website.
+photo: /media/images/alima.jpg
+draft: false
