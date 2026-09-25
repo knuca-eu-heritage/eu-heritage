@@ -1,0 +1,366 @@
+# Конфігурація Pages CMS для сайту EU-HERITAGE.
+# Цей файл описує, які форми бачать редактори. Змінює його лише адміністратор сайту.
+
+media:
+  - name: images
+    label: Зображення
+    input: media/images
+    output: /media/images
+    categories: [image]
+    rename: safe
+  - name: files
+    label: Документи (PDF тощо)
+    input: media/files
+    output: /media/files
+    categories: [document, spreadsheet, compressed]
+    rename: safe
+
+components:
+  line:
+    type: object
+    fields:
+      - { name: uk, label: Українською, type: string, required: true }
+      - { name: en, label: English, type: string }
+  para:
+    type: object
+    fields:
+      - { name: uk, label: Українською, type: text }
+      - { name: en, label: English, type: text }
+  rich:
+    type: object
+    fields:
+      - name: uk
+        label: Українською
+        type: rich-text
+        options: { format: markdown, media: images }
+      - name: en
+        label: English
+        type: rich-text
+        options: { format: markdown, media: images }
+  url:
+    type: string
+    label: "Адреса сторінки: латиницею через дефіс, напр. webinar-3-integrated-development"
+    required: true
+  draft:
+    type: boolean
+    label: Чернетка (не показувати на сайті)
+
+content:
+  # ---------- Колекції: записи, які команда додає регулярно ----------
+  - name: events
+    label: Події
+    type: collection
+    path: content/events
+    format: yaml
+    filename: "{fields.url}.yml"
+    view:
+      fields: [title.uk, date, kind]
+      primary: title.uk
+      sort: [date]
+      default: { sort: date, order: desc }
+    fields:
+      - { name: url, component: url }
+      - name: kind
+        label: Тип події
+        type: select
+        required: true
+        options:
+          values:
+            - { name: webinar, label: Відкритий вебінар }
+            - { name: conference, label: Конференція / круглий стіл }
+      - { name: number, label: Номер (1–6 для вебінарів, 1–3 для конференцій), type: number }
+      - { name: title, label: Назва, component: line }
+      - { name: date, label: Дата, type: date, required: true }
+      - { name: tentative, label: Дата орієнтовна (показувати лише місяць), type: boolean }
+      - { name: time, label: "Час (наприклад, 14:00–16:00 за Києвом)", type: string }
+      - name: format
+        label: Формат
+        type: select
+        options:
+          values:
+            - { name: online, label: Онлайн }
+            - { name: hybrid, label: Гібридний }
+            - { name: offline, label: Очно }
+      - { name: location, label: Місце, component: line }
+      - { name: summary, label: Короткий опис (1–2 речення для списку подій), component: para }
+      - { name: description, label: Анонс, component: rich }
+      - { name: programme, label: Програма, component: rich }
+      - { name: registration_url, label: Посилання на форму реєстрації, type: string }
+      - { name: participants, label: "Кількість учасників (після події, для показників)", type: number }
+      - { name: report, label: Звіт про подію (після події), component: rich }
+      - { name: video_url, label: Посилання на запис (YouTube тощо), type: string }
+      - name: materials
+        label: Матеріали (презентації, підсумки)
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Назва, component: line }
+          - { name: file, label: Файл, type: file, options: { media: files } }
+          - { name: link, label: Або посилання, type: string }
+      - { name: draft, component: draft }
+
+  - name: news
+    label: Новини
+    type: collection
+    path: content/news
+    format: yaml
+    filename: "{year}-{month}-{fields.url}.yml"
+    view:
+      fields: [title.uk, date, draft]
+      primary: title.uk
+      sort: [date]
+      default: { sort: date, order: desc }
+    fields:
+      - { name: url, component: url }
+      - { name: date, label: Дата, type: date, required: true }
+      - { name: title, label: Заголовок, component: line }
+      - { name: summary, label: Коротко (1–2 речення), component: para }
+      - { name: image, label: Головне зображення, type: image, options: { media: images } }
+      - { name: image_alt, label: Опис зображення для незрячих, component: line }
+      - { name: body, label: Текст, component: rich }
+      - { name: draft, component: draft }
+
+  - name: briefs
+    label: Policy briefs
+    type: collection
+    path: content/briefs
+    format: yaml
+    filename: "{fields.year}-{fields.url}.yml"
+    view:
+      fields: [title.uk, author, year, award]
+      primary: title.uk
+      sort: [year, author]
+      default: { sort: year, order: desc }
+    fields:
+      - { name: url, component: url }
+      - { name: title, label: Назва брифу, component: line }
+      - { name: author, label: Автор(ка), type: string, required: true }
+      - { name: year, label: Рік, type: number, required: true }
+      - name: issue
+        label: Увійшов до випуску серії
+        type: select
+        options: { values: ["1", "2", "3"] }
+      - name: topics
+        label: Теми
+        type: select
+        options:
+          multiple: true
+          values:
+            - { name: heritage, label: Культурна спадщина }
+            - { name: regeneration, label: Регенерація }
+            - { name: participation, label: Участь громади }
+            - { name: inclusion, label: Інклюзія та доступність }
+            - { name: governance, label: Урядування }
+            - { name: recovery, label: Відновлення }
+            - { name: neb, label: Новий європейський Баугауз }
+      - { name: place, label: Місто або громада, component: line }
+      - { name: abstract, label: Анотація, component: para }
+      - { name: pdf, label: PDF брифу, type: file, options: { media: files } }
+      - { name: award, label: Student Policy Brief Award, type: boolean }
+      - { name: draft, component: draft }
+
+  - name: issues
+    label: Випуски Policy Brief Series
+    type: collection
+    path: content/issues
+    format: yaml
+    filename: "issue-{fields.number}.yml"
+    view:
+      fields: [number, title.uk, date]
+      primary: title.uk
+    fields:
+      - { name: url, component: url }
+      - { name: number, label: Номер випуску, type: number, required: true }
+      - { name: date, label: Дата виходу, type: date }
+      - { name: title, label: Назва випуску, component: line }
+      - { name: description, label: Опис, component: para }
+      - { name: pdf, label: PDF випуску, type: file, options: { media: files } }
+      - { name: draft, component: draft }
+
+  - name: resources
+    label: Ресурси
+    type: collection
+    path: content/resources
+    format: yaml
+    filename: "{fields.url}.yml"
+    view:
+      fields: [title.uk, category]
+      primary: title.uk
+      sort: [category]
+    fields:
+      - { name: url, component: url }
+      - name: category
+        label: Розділ
+        type: select
+        required: true
+        options:
+          values:
+            - { name: teaching, label: Навчальний пакет }
+            - { name: recordings, label: Записи лекцій і вебінарів }
+            - { name: proceedings, label: Матеріали конференцій }
+            - { name: reports, label: Звіти проєкту }
+            - { name: eudocs, label: Документи ЄС і Ради Європи }
+      - { name: title, label: Назва, component: line }
+      - { name: description, label: Опис, component: para }
+      - { name: file, label: Файл, type: file, options: { media: files } }
+      - { name: link, label: Або посилання, type: string }
+      - { name: license, label: "Ліцензія (наприклад, CC BY 4.0)", type: string }
+      - { name: date, label: Дата, type: date }
+      - { name: draft, component: draft }
+
+  - name: team
+    label: Команда
+    type: collection
+    path: content/team
+    format: yaml
+    filename: "{fields.url}.yml"
+    view:
+      fields: [name.uk, order]
+      primary: name.uk
+      sort: [order]
+      default: { sort: order, order: asc }
+    fields:
+      - { name: url, component: url }
+      - { name: order, label: Порядок на сторінці, type: number }
+      - { name: name, label: "Ім'я та прізвище", component: line }
+      - { name: role, label: Роль у проєкті, component: line }
+      - { name: bio, label: Коротка біографія, component: rich }
+      - { name: photo, label: Фото (портретне, 4:5), type: image, options: { media: images } }
+      - { name: email, label: Email (необов'язково), type: string }
+      - { name: draft, component: draft }
+
+  # ---------- Окремі сторінки: редагуються, але не додаються й не видаляються ----------
+  - name: page-home
+    label: "Сторінка: Головна"
+    type: file
+    path: content/pages/home.yml
+    format: yaml
+    fields:
+      - { name: lede, label: Вступний абзац під заголовком, component: para }
+      - { name: notice, label: "Оголошення вгорі головної (залиште порожнім, щоб сховати)", component: rich }
+
+  - name: page-about
+    label: "Сторінка: Про проєкт"
+    type: file
+    path: content/pages/about.yml
+    format: yaml
+    fields:
+      - { name: title, label: Заголовок, component: line }
+      - { name: lede, label: Підзаголовок, component: para }
+      - { name: body, label: Текст, component: rich }
+      - { name: objectives_title, label: Заголовок блоку цілей, component: line }
+      - { name: objectives, label: Цілі, component: para, list: true }
+
+  - name: page-course
+    label: "Сторінка: Курс"
+    type: file
+    path: content/pages/course.yml
+    format: yaml
+    fields:
+      - { name: title, label: Заголовок, component: line }
+      - { name: lede, label: Підзаголовок, component: para }
+      - name: facts
+        label: Ключові факти
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Параметр, component: line }
+          - { name: value, label: Значення, component: line }
+      - { name: body, label: Текст, component: rich }
+      - name: modules
+        label: Модулі курсу
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Назва, component: line }
+          - { name: sessions, label: Кількість занять, type: number }
+          - { name: hours, label: Годин, type: number }
+          - { name: lead, label: Викладач, component: line }
+          - { name: description, label: Зміст, component: rich }
+      - { name: students_title, label: Заголовок блоку для студентів, component: line }
+      - { name: students, label: Інформація для студентів, component: rich }
+
+  - name: page-briefs
+    label: "Сторінка: Policy briefs"
+    type: file
+    path: content/pages/policy-briefs.yml
+    format: yaml
+    fields:
+      - { name: title, label: Заголовок, component: line }
+      - { name: lede, label: Підзаголовок, component: para }
+      - { name: body, label: Текст, component: rich }
+
+  - name: page-events
+    label: "Сторінка: Події"
+    type: file
+    path: content/pages/events.yml
+    format: yaml
+    fields:
+      - { name: title, label: Заголовок, component: line }
+      - { name: lede, label: Підзаголовок, component: para }
+
+  - name: page-resources
+    label: "Сторінка: Ресурси"
+    type: file
+    path: content/pages/resources.yml
+    format: yaml
+    fields:
+      - { name: title, label: Заголовок, component: line }
+      - { name: lede, label: Підзаголовок, component: para }
+      - { name: body, label: Текст, component: rich }
+
+  - name: page-contact
+    label: "Сторінка: Контакти"
+    type: file
+    path: content/pages/contact.yml
+    format: yaml
+    fields:
+      - { name: title, label: Заголовок, component: line }
+      - { name: lede, label: Підзаголовок, component: para }
+      - { name: body, label: Текст, component: rich }
+
+  - name: page-privacy
+    label: "Сторінка: Конфіденційність"
+    type: file
+    path: content/pages/privacy.yml
+    format: yaml
+    fields:
+      - { name: title, label: Заголовок, component: line }
+      - { name: lede, label: Підзаголовок, component: para }
+      - { name: body, label: Текст, component: rich }
+
+  - name: page-accessibility
+    label: "Сторінка: Доступність"
+    type: file
+    path: content/pages/accessibility.yml
+    format: yaml
+    fields:
+      - { name: title, label: Заголовок, component: line }
+      - { name: lede, label: Підзаголовок, component: para }
+      - { name: body, label: Текст, component: rich }
+
+  - name: settings
+    label: Налаштування сайту
+    type: file
+    path: content/settings/site.yml
+    format: yaml
+    fields:
+      - { name: acronym, label: Акронім, type: string }
+      - { name: title, label: Повна назва модуля, component: line }
+      - { name: brand_line, label: Підпис під логотипом, component: line }
+      - { name: tagline, label: Опис сайту для пошукових систем, component: para }
+      - { name: project_id, label: Програма та номер проєкту, component: line }
+      - { name: institution, label: Установа, component: line }
+      - { name: email, label: Контактний email, type: string }
+      - { name: address, label: Адреса, component: para }
+      - { name: subscribe_url, label: Посилання на форму підписки, type: string }
+      - { name: site_url, label: "Адреса сайту (для карти сайту)", type: string }
+      - { name: students_completed, label: Студентів пройшли курс (оновлюйте після кожного циклу), type: number }
+      - name: targets
+        label: Цільові показники (з Annex 1, не змінювати без потреби)
+        type: object
+        fields:
+          - { name: students, label: Студенти, type: number }
+          - { name: webinars, label: Вебінари, type: number }
+          - { name: conferences, label: Конференції, type: number }
+          - { name: participants, label: Зовнішні учасники, type: number }
