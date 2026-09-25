@@ -1,11 +1,17 @@
 url: liubov-apostolova-sossa
 order: 2
-name: { uk: Любов Апостолова-Сосса, en: Liubov Apostolova-Sossa }
+name:
+  uk: Любов Апостолова-Сосса
+  en: Liubov Apostolova-Sossa
 role:
   uk: Викладачка, кураторка комунікацій і подій, кандидатка наук
   en: Lecturer, outreach and events lead, PhD
 bio:
-  uk: Фахівчиня з управління культурною спадщиною, партисипативного врядування та адаптивного використання історичних будівель; членкиня ICOMOS Україна. Відповідає за вебінари, конференції та відкриті матеріали.
-  en: Specialist in cultural heritage management, participatory governance and adaptive reuse; member of ICOMOS Ukraine. Leads the webinars, conferences and open materials.
-photo: ""
-email: ""
+  uk: Фахівчиня з управління культурною спадщиною, партисипативного врядування та
+    адаптивного використання історичних будівель; членкиня ICOMOS Україна.
+    Відповідає за вебінари, конференції та відкриті матеріали.
+  en: Specialist in cultural heritage management, participatory governance and
+    adaptive reuse; member of ICOMOS Ukraine. Leads the webinars, conferences
+    and open materials.
+photo: /media/images/lasossa.jpg
+draft: false
