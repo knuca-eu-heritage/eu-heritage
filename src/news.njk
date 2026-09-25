@@ -1,0 +1,17 @@
+---
+pagination:
+  data: db.langs
+  size: 1
+  alias: lang
+permalink: "/{{ lang }}/news/"
+---
+{% extends "base.njk" %}
+{% import "macros.njk" as m %}
+{% set title = "nav.news" | t(lang) %}
+{% block main %}
+<header class="page-head wrap"><h1>{{ "nav.news" | t(lang) }}</h1></header>
+<div class="wrap">
+  {% if db.news.length %}<ul class="news-list is-full">{% for n in db.news %}{{ m.newsItem(n, lang) }}{% endfor %}</ul>
+  {% else %}<p class="empty">{{ "news.none" | t(lang) }}</p>{% endif %}
+</div>
+{% endblock %}

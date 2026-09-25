@@ -1,0 +1,15 @@
+url: example-brief
+title:
+  uk: "Приклад: інклюзивна регенерація історичного кварталу"
+  en: "Example: inclusive regeneration of a historic quarter"
+author: Прізвище Ім'я
+year: 2027
+issue: "1"
+topics: [heritage, inclusion]
+place: { uk: Чернігів, en: Chernihiv }
+abstract:
+  uk: Цей запис є зразком і не публікується (увімкнено «Чернетка»). Скопіюйте його, щоб додати справжній бриф.
+  en: This entry is a sample and is not published (Draft is on). Duplicate it to add a real brief.
+pdf: ""
+award: false
+draft: true

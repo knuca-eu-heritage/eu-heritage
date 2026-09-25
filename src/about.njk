@@ -1,0 +1,39 @@
+---
+pagination:
+  data: db.langs
+  size: 1
+  alias: lang
+permalink: "/{{ lang }}/about/"
+---
+{% extends "base.njk" %}
+{% import "macros.njk" as m %}
+{% set P = db.pages.about %}
+{% set title = P.title | L(lang) %}
+{% block main %}
+{{ m.pageHead(P, lang) }}
+<div class="wrap prose">{{ P.body | L(lang) | md | safe }}</div>
+
+{% if P.objectives and P.objectives.length %}
+<section class="wrap block" aria-labelledby="obj-h">
+  <h2 id="obj-h">{{ P.objectives_title | L(lang) }}</h2>
+  <ol class="objectives">
+    {% for o in P.objectives %}<li>{{ o | L(lang) }}</li>{% endfor %}
+  </ol>
+</section>
+{% endif %}
+
+<section class="wrap block" aria-labelledby="team-h">
+  <h2 id="team-h">{{ "nav.team" | t(lang) }}</h2>
+  <ul class="team-mini">
+    {% for p in db.team %}<li><a href="/{{ lang }}/about/team/#{{ p.slug }}"><strong>{{ p.name | L(lang) }}</strong></a><br>{{ p.role | L(lang) }}</li>{% endfor %}
+  </ul>
+</section>
+
+{% set reports = db.resources | where("category", "reports") %}
+{% if reports.length %}
+<section class="wrap block" aria-labelledby="rep-h">
+  <h2 id="rep-h">{{ "res.cat.reports" | t(lang) }}</h2>
+  <ul class="res-list">{% for r in reports %}<li><span>{{ r.title | L(lang) }}</span> {{ m.fileLink(r, lang, "res.open" | t(lang)) }}</li>{% endfor %}</ul>
+</section>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,27 @@
+---
+pagination:
+  data: db.langs
+  size: 1
+  alias: lang
+permalink: "/{{ lang }}/about/team/"
+---
+{% extends "base.njk" %}
+{% import "macros.njk" as m %}
+{% set title = "nav.team" | t(lang) %}
+{% block main %}
+<header class="page-head wrap"><h1>{{ "nav.team" | t(lang) }}</h1></header>
+<ul class="wrap team-list">
+  {% for p in db.team %}
+  <li class="person" id="{{ p.slug }}">
+    {% if p.photo %}<img class="person-photo" src="{{ p.photo }}" alt="" width="160" height="200" loading="lazy">
+    {% else %}<span class="person-photo is-empty" aria-hidden="true"></span>{% endif %}
+    <div>
+      <h2>{{ p.name | L(lang) }}</h2>
+      <p class="person-role">{{ p.role | L(lang) }}</p>
+      <div class="prose">{{ p.bio | L(lang) | md | safe }}</div>
+      {% if p.email %}<p><a href="mailto:{{ p.email }}">{{ p.email }}</a></p>{% endif %}
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

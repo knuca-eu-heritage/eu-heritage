@@ -1,0 +1,8 @@
+<nav aria-label="{{ 'nav.menu' | t(lang) }}">
+  <ul class="nav-list">
+    {%- for key, path in { about: "about", course: "course", briefs: "policy-briefs", events: "events", resources: "resources", news: "news", contact: "contact" } %}
+    {%- set href = "/" ~ lang ~ "/" ~ path ~ "/" %}
+    <li><a href="{{ href }}"{% if page.url.startsWith(href) %} aria-current="page"{% endif %}>{{ ("nav." ~ key) | t(lang) }}</a></li>
+    {%- endfor %}
+  </ul>
+</nav>

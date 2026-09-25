@@ -1,0 +1,23 @@
+url: conference-2029
+kind: conference
+number: 3
+date: 2029-08-23
+tentative: true
+time: ""
+format: hybrid
+title:
+  uk: "Зміст ЄС в урбаністичній освіті: результати та перспективи"
+  en: "EU content in urban planning education: achievements and future directions"
+location:
+  uk: "Київ, КНУБА, та онлайн"
+  en: "Kyiv, KNUBA, and online"
+summary:
+  uk: "Підсумкова конференція модуля про інтеграцію студій ЄС у підготовку фахівців з просторового розвитку."
+  en: "The Module's final conference on integrating EU studies into built-environment curricula."
+description: { uk: "", en: "" }
+programme: { uk: "", en: "" }
+registration_url: ""
+participants: 0
+report: { uk: "", en: "" }
+video_url: ""
+materials: []

@@ -1,0 +1,82 @@
+---
+pagination:
+  data: db.langs
+  size: 1
+  alias: lang
+permalink: "/{{ lang }}/"
+---
+{% extends "base.njk" %}
+{% import "macros.njk" as m %}
+{% set P = db.pages.home %}
+{% set bodyClass = "is-home" %}
+{% block main %}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1>{{ db.settings.title | L(lang) }}</h1>
+      <p class="lede">{{ P.lede | L(lang) }}</p>
+      <p class="actions">
+        <a class="btn" href="/{{ lang }}/course/">{{ "home.aboutCourse" | t(lang) }}</a>
+        <a class="btn btn-quiet" href="/{{ lang }}/events/">{{ "home.seeEvents" | t(lang) }}</a>
+      </p>
+    </div>
+    <div class="hero-plan">{% include "plan.svg.njk" %}</div>
+  </div>
+</section>
+
+{% if P.notice and (P.notice | L(lang)) %}
+<aside class="wrap notice">{{ P.notice | L(lang) | md | safe }}</aside>
+{% endif %}
+
+<section class="wrap ledger" aria-labelledby="ledger-h">
+  <h2 id="ledger-h">{{ "home.progress" | t(lang) }}</h2>
+  <p class="ledger-note">{{ "home.progressNote" | t(lang) }}</p>
+  <dl class="ledger-rows">
+    {% for key in ["students", "participants"] %}
+    {% set ind = db.indicators[key] %}
+    <div class="ledger-row">
+      <dt>{{ ("ind." ~ key) | t(lang) }}</dt>
+      <dd class="ledger-vis"><span class="bar"><span style="width: {{ ind.value | percent(ind.target) }}%"></span></span></dd>
+      <dd class="ledger-num"><strong>{{ ind.value }}</strong> {{ "home.of" | t(lang) }} {{ ind.target }}</dd>
+    </div>
+    {% endfor %}
+    {% for key in ["webinars", "conferences"] %}
+    {% set ind = db.indicators[key] %}
+    <div class="ledger-row">
+      <dt>{{ ("ind." ~ key) | t(lang) }}</dt>
+      <dd class="ledger-vis"><span class="plots">{% for i in ind.target | range %}<span class="plot{% if i < ind.value %} done{% endif %}"></span>{% endfor %}</span></dd>
+      <dd class="ledger-num"><strong>{{ ind.value }}</strong> {{ "home.of" | t(lang) }} {{ ind.target }}</dd>
+    </div>
+    {% endfor %}
+  </dl>
+</section>
+
+<div class="wrap home-cols">
+  <section aria-labelledby="up-h">
+    <h2 id="up-h">{{ "home.upcoming" | t(lang) }}</h2>
+    {% if db.upcoming.length %}
+      <ul class="event-list">{% for e in db.upcoming | limit(3) %}{{ m.eventRow(e, lang) }}{% endfor %}</ul>
+    {% else %}<p class="empty">{{ "home.noUpcoming" | t(lang) }}</p>{% endif %}
+    <p><a class="more" href="/{{ lang }}/events/">{{ "home.allEvents" | t(lang) }}</a></p>
+  </section>
+  <section aria-labelledby="news-h">
+    <h2 id="news-h">{{ "home.latestNews" | t(lang) }}</h2>
+    {% if db.news.length %}
+      <ul class="news-list">{% for n in db.news | limit(3) %}{{ m.newsItem(n, lang) }}{% endfor %}</ul>
+    {% else %}<p class="empty">{{ "news.none" | t(lang) }}</p>{% endif %}
+    <p><a class="more" href="/{{ lang }}/news/">{{ "home.allNews" | t(lang) }}</a></p>
+  </section>
+</div>
+
+<section class="wrap series-band" aria-labelledby="series-h">
+  <h2 id="series-h">{{ "home.series" | t(lang) }}</h2>
+  {% set latest = db.issues[0] %}
+  {% if latest %}
+    <p><strong>{{ "briefs.issue" | t(lang) }} {{ latest.number }}.</strong> {{ latest.title | L(lang) }}</p>
+    <p><a class="more" href="/{{ lang }}/policy-briefs/">{{ "nav.briefs" | t(lang) }}</a></p>
+  {% else %}
+    <p>{{ db.pages["policy-briefs"].lede | L(lang) }}</p>
+    <p><a class="more" href="/{{ lang }}/policy-briefs/">{{ "nav.briefs" | t(lang) }}</a></p>
+  {% endif %}
+</section>
+{% endblock %}

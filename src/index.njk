@@ -1,0 +1,18 @@
+---
+permalink: "/index.html"
+---
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>{{ db.settings.acronym }}</title>
+<meta http-equiv="refresh" content="0; url=/uk/">
+<link rel="canonical" href="/uk/">
+<script>
+  // Відвідувачі з неукраїнською мовою браузера потрапляють на англійську версію
+  var l = (navigator.language || "uk").toLowerCase();
+  location.replace(document.querySelector('link[rel=canonical]').href.replace(/\/uk\/$/, l.startsWith("uk") ? "/uk/" : "/en/"));
+</script>
+</head>
+<body><p><a href="/uk/">Українською</a> · <a href="/en/">English</a></p></body>
+</html>

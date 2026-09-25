@@ -1,0 +1,24 @@
+---
+pagination:
+  data: db.langs
+  size: 1
+  alias: lang
+permalink: "/{{ lang }}/events/"
+---
+{% extends "base.njk" %}
+{% import "macros.njk" as m %}
+{% set P = db.pages.events %}
+{% set title = P.title | L(lang) %}
+{% block main %}
+{{ m.pageHead(P, lang) }}
+<section class="wrap block" aria-labelledby="up-h">
+  <h2 id="up-h">{{ "events.upcoming" | t(lang) }}</h2>
+  {% if db.upcoming.length %}<ul class="event-list">{% for e in db.upcoming %}{{ m.eventRow(e, lang) }}{% endfor %}</ul>
+  {% else %}<p class="empty">{{ "home.noUpcoming" | t(lang) }}</p>{% endif %}
+</section>
+<section class="wrap block" aria-labelledby="past-h">
+  <h2 id="past-h">{{ "events.past" | t(lang) }}</h2>
+  {% if db.pastEvents.length %}<ul class="event-list">{% for e in db.pastEvents %}{{ m.eventRow(e, lang) }}{% endfor %}</ul>
+  {% else %}<p class="empty">{{ "events.none" | t(lang) }}</p>{% endif %}
+</section>
+{% endblock %}

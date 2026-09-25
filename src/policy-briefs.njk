@@ -1,0 +1,65 @@
+---
+pagination:
+  data: db.langs
+  size: 1
+  alias: lang
+permalink: "/{{ lang }}/policy-briefs/"
+---
+{% extends "base.njk" %}
+{% import "macros.njk" as m %}
+{% set P = db.pages["policy-briefs"] %}
+{% set title = P.title | L(lang) %}
+{% set scripts = ["/assets/js/briefs.js"] %}
+{% block main %}
+{{ m.pageHead(P, lang) }}
+<div class="wrap prose">{{ P.body | L(lang) | md | safe }}</div>
+
+<section class="wrap block" aria-labelledby="iss-h">
+  <h2 id="iss-h">{{ "briefs.issues" | t(lang) }}</h2>
+  {% if db.issues.length %}
+  <ul class="issues">
+    {% for i in db.issues %}
+    <li class="issue">
+      <p class="issue-no">{{ "briefs.issue" | t(lang) }} {{ i.number }}{% if i.date %}, {{ i.date | year }}{% endif %}</p>
+      <h3>{{ i.title | L(lang) }}</h3>
+      {% if i.description %}<p>{{ i.description | L(lang) }}</p>{% endif %}
+      {{ m.fileLink(i, lang, "briefs.download" | t(lang)) }}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}<p class="empty">{{ "briefs.noIssues" | t(lang) }}</p>{% endif %}
+</section>
+
+{% if db.awards.length %}
+<section class="wrap block" aria-labelledby="aw-h">
+  <h2 id="aw-h">{{ "briefs.award" | t(lang) }}</h2>
+  <ul class="awards">{% for b in db.awards %}<li><span class="aw-year">{{ b.year }}</span> <strong>{{ b.author }}</strong>. {{ b.title | L(lang) }}</li>{% endfor %}</ul>
+</section>
+{% endif %}
+
+<section class="wrap block" aria-labelledby="cat-h">
+  <h2 id="cat-h">{{ "briefs.catalog" | t(lang) }}</h2>
+  {% if db.briefs.length %}
+  <form class="filters" data-briefs-filter hidden>
+    <label>{{ "briefs.filterYear" | t(lang) }}
+      <select name="year"><option value="">{{ "briefs.all" | t(lang) }}</option>{% for y in db.briefYears %}<option>{{ y }}</option>{% endfor %}</select>
+    </label>
+    <label>{{ "briefs.filterTopic" | t(lang) }}
+      <select name="topic"><option value="">{{ "briefs.all" | t(lang) }}</option>{% for tp in db.briefTopics %}<option value="{{ tp }}">{{ ("briefs.topics." ~ tp) | t(lang) }}</option>{% endfor %}</select>
+    </label>
+    <p class="filter-count" aria-live="polite" data-label="{{ 'briefs.shown' | t(lang) }}"></p>
+  </form>
+  <ul class="brief-list">
+    {% for b in db.briefs %}
+    <li class="brief" data-year="{{ b.year }}" data-topics="{{ (b.topics or []) | join(' ') }}">
+      <h3>{{ b.title | L(lang) }}</h3>
+      <p class="brief-meta">{{ b.author }}, {{ b.year }}{% if b.place %}. {{ b.place | L(lang) }}{% endif %}{% if b.award %}. <span class="badge">{{ "briefs.award" | t(lang) }}</span>{% endif %}</p>
+      {% if b.topics %}<p class="tags">{% for tp in b.topics %}<span>{{ ("briefs.topics." ~ tp) | t(lang) }}</span>{% endfor %}</p>{% endif %}
+      {% if b.abstract %}<details><summary>{{ "briefs.abstract" | t(lang) }}</summary><p>{{ b.abstract | L(lang) }}</p></details>{% endif %}
+      {{ m.fileLink(b, lang, "briefs.download" | t(lang)) }}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}<p class="empty">{{ "briefs.noBriefs" | t(lang) }}</p>{% endif %}
+</section>
+{% endblock %}

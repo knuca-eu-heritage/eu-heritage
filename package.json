@@ -1,0 +1,20 @@
+{
+  "name": "eu-heritage-site",
+  "version": "1.0.0",
+  "description": "Сайт модуля Жана Моне EU-HERITAGE (КНУБА)",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "js-yaml": "^5.4.2",
+    "markdown-it": "^15.0.2"
+  },
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  }
+}

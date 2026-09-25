@@ -1,0 +1,23 @@
+url: webinar-1-eu-values
+kind: webinar
+number: 1
+date: 2027-04-15
+tentative: true
+time: ""
+format: online
+title:
+  uk: "Цінності ЄС в урбаністичній політиці: Нова Лейпцизька хартія та Територіальний порядок денний 2030"
+  en: "EU values in urban policy: the New Leipzig Charter and the Territorial Agenda 2030"
+location:
+  uk: "Онлайн"
+  en: "Online"
+summary:
+  uk: "Інклюзія, участь і демократичне врядування як нормативні засади міського розвитку в ЄС."
+  en: "Inclusion, participation and democratic governance as the normative foundations of urban development in the EU."
+description: { uk: "", en: "" }
+programme: { uk: "", en: "" }
+registration_url: ""
+participants: 0
+report: { uk: "", en: "" }
+video_url: ""
+materials: []

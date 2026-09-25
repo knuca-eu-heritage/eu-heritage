@@ -1,0 +1,23 @@
+url: conference-2027
+kind: conference
+number: 1
+date: 2027-08-26
+tentative: true
+time: ""
+format: hybrid
+title:
+  uk: "Рамки ЄС для планування та регенерації на основі спадщини в умовах повоєнної відбудови"
+  en: "EU frameworks for heritage-based planning and regeneration in post-war reconstruction"
+location:
+  uk: "Київ, КНУБА, та онлайн"
+  en: "Kyiv, KNUBA, and online"
+summary:
+  uk: "Перша щорічна конференція модуля про актуальні політики ЄС і їхнє значення для відновлення історичних міст України."
+  en: "The Module's first annual conference on current EU policy and its relevance for the recovery of Ukraine's historic cities."
+description: { uk: "", en: "" }
+programme: { uk: "", en: "" }
+registration_url: ""
+participants: 0
+report: { uk: "", en: "" }
+video_url: ""
+materials: []

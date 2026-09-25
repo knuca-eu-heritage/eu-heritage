@@ -1,0 +1,39 @@
+{# Рядок події у списку #}
+{% macro eventRow(e, lang) %}
+<li class="event-row{% if not e.past %} is-upcoming{% endif %}">
+  <div class="event-date" aria-hidden="true">
+    {%- if e.tentative %}<span class="d-month">{{ e.date | monthShort(lang) }}</span><span class="d-year">{{ e.date | year }}</span>
+    {%- else %}<span class="d-day">{{ e.date | dayNum }}</span><span class="d-month">{{ e.date | monthShort(lang) }} {{ e.date | year }}</span>{% endif -%}
+  </div>
+  <div class="event-body">
+    <p class="event-kind">{{ ("events.kind." ~ e.kind) | t(lang) }}{% if e.number %} {{ e.number }}{% endif %}</p>
+    <h3 class="event-title"><a href="/{{ lang }}/events/{{ e.slug }}/">{{ e.title | L(lang) }}</a></h3>
+    <p class="event-meta">
+      <span class="visually-hidden">{{ "events.when" | t(lang) }}: </span>{{ e.date | fdate(lang, e.tentative) }}{% if e.tentative %}, {{ "events.tentative" | t(lang) }}{% endif %}{% if e.format %}. {{ ("events.fmt." ~ e.format) | t(lang) }}{% endif %}
+    </p>
+  </div>
+</li>
+{% endmacro %}
+
+{# Картка новини #}
+{% macro newsItem(n, lang) %}
+<li class="news-item">
+  <p class="news-date"><time datetime="{{ n.date }}">{{ n.date | fdate(lang) }}</time></p>
+  <h3><a href="/{{ lang }}/news/{{ n.slug }}/">{{ n.title | L(lang) }}</a></h3>
+  {% if n.summary %}<p>{{ n.summary | L(lang) }}</p>{% endif %}
+</li>
+{% endmacro %}
+
+{# Заголовок сторінки #}
+{% macro pageHead(p, lang) %}
+<header class="page-head wrap">
+  <h1>{{ p.title | L(lang) }}</h1>
+  {% if p.lede %}<p class="lede">{{ p.lede | L(lang) }}</p>{% endif %}
+</header>
+{% endmacro %}
+
+{# Посилання на файл або ресурс #}
+{% macro fileLink(item, lang, label) %}
+{%- set href = item.file or item.link or item.pdf %}
+{%- if href %}<a class="file-link" href="{{ href }}">{{ label }}{% if item.file or item.pdf %} <span class="file-ext">{{ (item.file or item.pdf) | fileExt }}</span>{% endif %}</a>{% endif -%}
+{% endmacro %}

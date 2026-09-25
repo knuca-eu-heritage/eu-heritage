@@ -1,0 +1,263 @@
+/* ===== Шрифти (локально, без звернень до сторонніх серверів) ===== */
+@font-face { font-family: "Literata"; font-weight: 500; font-display: swap; src: url("../fonts/literata-cyrillic-500-normal.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Literata"; font-weight: 500; font-display: swap; src: url("../fonts/literata-latin-500-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Literata"; font-weight: 600; font-display: swap; src: url("../fonts/literata-cyrillic-600-normal.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Literata"; font-weight: 600; font-display: swap; src: url("../fonts/literata-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 400; font-display: swap; src: url("../fonts/ibm-plex-sans-cyrillic-400-normal.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 400; font-display: swap; src: url("../fonts/ibm-plex-sans-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 400; font-style: italic; font-display: swap; src: url("../fonts/ibm-plex-sans-cyrillic-400-italic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 400; font-style: italic; font-display: swap; src: url("../fonts/ibm-plex-sans-latin-400-italic.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 500; font-display: swap; src: url("../fonts/ibm-plex-sans-cyrillic-500-normal.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 500; font-display: swap; src: url("../fonts/ibm-plex-sans-latin-500-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 600; font-display: swap; src: url("../fonts/ibm-plex-sans-cyrillic-600-normal.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 600; font-display: swap; src: url("../fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+/* ===== Токени =====
+   Палітра взята з історичного Києва: штукатурка фасадів, патина мідних бань, вохра. */
+:root {
+  --ink: #1f2a2c;
+  --muted: #56625f;
+  --plaster: #f4f5f1;
+  --paper: #ffffff;
+  --verdigris: #2e6a62;
+  --verdigris-deep: #245650;
+  --ochre: #b8862a;
+  --ochre-text: #8a6417;
+  --rule: #c9d1cc;
+
+  --serif: "Literata", "Georgia", "Times New Roman", serif;
+  --sans: "IBM Plex Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+  --step--1: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: 1.5625rem;
+  --step-3: clamp(1.75rem, 1.4rem + 1.5vw, 2.25rem);
+  --step-4: clamp(2.1rem, 1.4rem + 3vw, 3.4rem);
+
+  --space: 1.5rem;
+  --wrap: 74rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--plaster);
+  color: var(--ink);
+  font: 400 var(--step-0)/1.6 var(--sans);
+}
+img { max-width: 100%; height: auto; }
+a { color: var(--verdigris-deep); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.2; margin: 0 0 0.6em; text-wrap: balance; }
+h1 { font-size: var(--step-4); letter-spacing: -0.01em; }
+h2 { font-size: var(--step-2); }
+h3 { font-size: var(--step-1); }
+p { margin: 0 0 1em; }
+
+.wrap { max-width: var(--wrap); margin-inline: auto; padding-inline: 1.25rem; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: 1rem; top: -4rem; background: var(--ink); color: var(--paper); padding: 0.5rem 1rem; z-index: 10; }
+.skip:focus { top: 1rem; }
+
+/* ===== Шапка ===== */
+.site-head { border-bottom: 1px solid var(--rule); background: var(--plaster); }
+.head-row { display: flex; align-items: center; gap: 1.5rem; min-height: 4.5rem; }
+.brand { display: flex; align-items: center; gap: 0.75rem; color: var(--ink); text-decoration: none; margin-right: auto; }
+.brand-mark { width: 2rem; height: 2rem; flex: none; }
+.brand-hl { fill: var(--verdigris); }
+.brand-text { display: flex; flex-direction: column; line-height: 1.2; }
+.brand-name { font-family: var(--serif); font-weight: 600; font-size: 1.125rem; letter-spacing: 0.02em; }
+.brand-sub { font-size: var(--step--1); color: var(--muted); }
+
+.nav-list { list-style: none; margin: 0; padding: 0; display: flex; gap: 0.25rem 1.25rem; flex-wrap: wrap; }
+.nav-list a { color: var(--ink); text-decoration: none; font-weight: 500; padding: 0.35rem 0; border-bottom: 2px solid transparent; }
+.nav-list a:hover { border-bottom-color: var(--rule); }
+.nav-list a[aria-current="page"] { border-bottom-color: var(--verdigris); }
+.lang-switch { font-weight: 600; color: var(--ink); text-decoration: none; border: 1px solid var(--ink); padding: 0.2rem 0.55rem; font-size: var(--step--1); }
+.lang-switch:hover { background: var(--ink); color: var(--paper); }
+
+.nav-toggle { display: none; }
+@media (max-width: 62rem) {
+  .nav-wide { display: none; }
+  .nav-toggle { display: block; order: 3; }
+  .nav-toggle summary { cursor: pointer; font-weight: 600; list-style: none; padding: 0.3rem 0.6rem; border: 1px solid var(--ink); font-size: var(--step--1); }
+  .nav-toggle summary::-webkit-details-marker { display: none; }
+  .nav-toggle[open] nav { position: absolute; left: 0; right: 0; top: 4.5rem; background: var(--paper); border-bottom: 1px solid var(--rule); padding: 1rem 1.25rem 1.5rem; z-index: 5; }
+  .nav-toggle .nav-list { flex-direction: column; }
+  .site-head { position: relative; }
+  .brand-sub { display: none; }
+}
+
+/* ===== Головна: перший екран ===== */
+.hero { border-bottom: 1px solid var(--rule); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 3rem; align-items: center; padding-block: 3.5rem 3rem; }
+.hero-kicker { color: var(--muted); font-weight: 500; margin-bottom: 1.25rem; }
+.hero h1 { max-width: 18ch; }
+.lede { font-size: var(--step-1); line-height: 1.5; max-width: 60ch; color: var(--ink); }
+.plan { width: 100%; height: auto; display: block; }
+.plan .b { fill: var(--ink); opacity: 0.86; }
+.plan .hl { fill: var(--verdigris); }
+.plan .zone { fill: none; stroke: var(--ochre); stroke-width: 2.5; stroke-dasharray: 10 6; stroke-linejoin: round; }
+@media (max-width: 52rem) {
+  .hero-grid { grid-template-columns: 1fr; gap: 1.5rem; padding-block: 1.5rem 2.5rem; }
+  .hero-plan { order: -1; max-height: 14rem; overflow: hidden; }
+}
+
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+.btn { display: inline-block; background: var(--verdigris); color: var(--paper); text-decoration: none; font-weight: 600; padding: 0.7rem 1.2rem; border: 2px solid var(--verdigris); border-radius: 2px; }
+.btn:hover { background: var(--verdigris-deep); border-color: var(--verdigris-deep); }
+.btn-quiet { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn-quiet:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+.notice { margin-top: 2rem; border-left: 4px solid var(--ochre); background: var(--paper); padding: 1rem 1.25rem; }
+.notice p:last-child { margin: 0; }
+
+/* ===== Показники (ділянки на плані) ===== */
+.ledger { padding-block: 3rem 2rem; }
+.ledger h2 { margin-bottom: 0.2em; }
+.ledger-note { color: var(--muted); margin-bottom: 1.5rem; }
+.ledger-rows { margin: 0; border-top: 2px solid var(--ink); }
+.ledger-row { display: grid; grid-template-columns: minmax(12rem, 1.2fr) minmax(0, 2fr) 7rem; gap: 1.5rem; align-items: center; padding-block: 0.9rem; border-bottom: 1px solid var(--rule); }
+.ledger-row dt { font-weight: 500; }
+.ledger-row dd { margin: 0; }
+.ledger-num { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+.ledger-num strong { color: var(--ink); font-family: var(--serif); font-size: var(--step-1); font-weight: 600; }
+.bar { display: block; height: 0.75rem; background: var(--paper); border: 1px solid var(--ink); }
+.bar span { display: block; height: 100%; background: var(--verdigris); }
+.plots { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.plot { width: 1.35rem; height: 1.35rem; border: 1.5px solid var(--ink); background: var(--paper); }
+.plot.done { background: var(--verdigris); border-color: var(--verdigris); }
+@media (max-width: 40rem) {
+  .ledger-row { grid-template-columns: 1fr auto; gap: 0.5rem 1rem; }
+  .ledger-row dt { grid-column: 1 / -1; }
+}
+
+/* ===== Колонки головної ===== */
+.home-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; padding-block: 2rem 1rem; }
+@media (max-width: 52rem) { .home-cols { grid-template-columns: 1fr; gap: 1.5rem; } }
+.series-band { padding-block: 2rem 3.5rem; }
+.series-band > * { max-width: 62ch; }
+.more { font-weight: 600; }
+.empty { color: var(--muted); font-style: italic; }
+
+/* ===== Події ===== */
+.event-list, .news-list, .res-list, .issues, .awards, .brief-list, .team-list, .team-mini, .modules { list-style: none; margin: 0; padding: 0; }
+.event-row { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 1.25rem; padding-block: 1.1rem; border-top: 1px solid var(--rule); }
+.event-list .event-row:last-child { border-bottom: 1px solid var(--rule); }
+.event-date { display: flex; flex-direction: column; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.d-day { font-family: var(--serif); font-size: 2rem; font-weight: 600; }
+.d-month, .d-year { font-size: var(--step--1); color: var(--muted); }
+.event-date .d-month:first-child { font-family: var(--serif); font-size: 1.25rem; color: var(--ink); font-weight: 600; }
+.is-upcoming .d-day, .is-upcoming .event-date .d-month:first-child { color: var(--verdigris-deep); }
+.event-kind { font-size: var(--step--1); color: var(--muted); margin-bottom: 0.2rem; }
+.event-title { font-size: var(--step-1); margin-bottom: 0.3rem; }
+.event-title a { color: var(--ink); text-decoration: none; }
+.event-title a:hover { text-decoration: underline; }
+.event-meta { font-size: var(--step--1); color: var(--muted); margin: 0; }
+
+.event-grid { display: grid; grid-template-columns: 17rem minmax(0, 1fr); gap: 3rem; align-items: start; padding-bottom: 2rem; }
+.event-content section { margin-top: 2.25rem; }
+@media (max-width: 52rem) { .event-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+/* ===== Факти (ключ: значення) ===== */
+.facts { margin-block: 0 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); border-top: 2px solid var(--ink); }
+.facts > div { padding: 0.8rem 1rem 0.8rem 0; border-bottom: 1px solid var(--rule); }
+.facts dt { font-size: var(--step--1); color: var(--muted); }
+.facts dd { margin: 0.15rem 0 0; font-weight: 500; }
+.facts dd p { margin: 0; }
+.facts.is-stacked { grid-template-columns: 1fr; }
+.facts-action { border-bottom: 0 !important; padding-top: 1.25rem !important; }
+
+/* ===== Сторінки ===== */
+.page-head { padding-block: 3rem 1.5rem; }
+.page-head h1 { max-width: 24ch; }
+.prose { max-width: 68ch; }
+.wrap.prose { margin-left: max(1.25rem, calc((100% - var(--wrap)) / 2 + 1.25rem)); padding-inline: 0; margin-right: 1.25rem; }
+.prose h2 { margin-top: 1.8em; }
+.prose ul, .prose ol { padding-left: 1.3rem; }
+.block { padding-block: 2rem; }
+.block > h2 { padding-top: 0.9rem; border-top: 2px solid var(--ink); }
+
+.objectives { max-width: 68ch; padding-left: 1.5rem; }
+.objectives li { margin-bottom: 0.75rem; padding-left: 0.25rem; }
+.objectives li::marker { font-family: var(--serif); font-weight: 600; color: var(--verdigris-deep); }
+
+.team-mini { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.25rem; }
+.team-list { display: grid; gap: 2.5rem; padding-bottom: 3rem; }
+.person { display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: 1.75rem; align-items: start; }
+.person h2 { margin-bottom: 0.2em; }
+.person-role { color: var(--muted); }
+.person-photo { width: 10rem; aspect-ratio: 4 / 5; object-fit: cover; background: var(--paper); border: 1px solid var(--rule); display: block; }
+.person-photo.is-empty { background: repeating-linear-gradient(135deg, var(--paper) 0 8px, var(--plaster) 8px 16px); }
+@media (max-width: 40rem) { .person { grid-template-columns: 6rem minmax(0, 1fr); gap: 1rem; } .person-photo { width: 6rem; } }
+
+/* Модулі курсу: тривалість у годинах як масштабна смуга */
+.module { display: grid; grid-template-columns: 6rem minmax(0, 1fr); gap: 1.5rem; padding-block: 1.5rem; border-top: 1px solid var(--rule); }
+.module-hours { font-size: var(--step--1); color: var(--muted); }
+.hours-bar { display: block; height: 0.4rem; width: calc(var(--h) * 0.38rem); background: var(--verdigris); margin-top: 0.5rem; }
+.module-hours span { display: block; font-family: var(--serif); font-size: 2.25rem; font-weight: 600; color: var(--ink); line-height: 1; }
+.module h3 { margin-bottom: 0.3rem; }
+.module-meta { color: var(--muted); font-size: var(--step--1); }
+.callout { background: var(--paper); border: 1px solid var(--rule); border-left: 4px solid var(--verdigris); padding: 1.5rem 1.75rem; margin-bottom: 2rem; }
+.callout h2 { margin-top: 0; }
+
+/* Новини */
+.news-item { padding-block: 1rem; border-top: 1px solid var(--rule); }
+.news-item h3 { margin-bottom: 0.3rem; }
+.news-item h3 a { color: var(--ink); text-decoration: none; }
+.news-item h3 a:hover { text-decoration: underline; }
+.news-item p { margin-bottom: 0.3rem; }
+.news-date { font-size: var(--step--1); color: var(--muted); margin-bottom: 0.2rem; }
+.news-list.is-full { max-width: 68ch; padding-bottom: 3rem; }
+.news-figure { margin-block: 0 2rem; }
+
+/* Ресурси, випуски, брифи */
+.res-list li { display: flex; justify-content: space-between; gap: 1.5rem; align-items: baseline; padding-block: 0.9rem; border-top: 1px solid var(--rule); }
+.res-list h3 { font-size: var(--step-0); font-family: var(--sans); font-weight: 600; margin-bottom: 0.2rem; }
+.res-list p { margin: 0; color: var(--muted); font-size: var(--step--1); max-width: 62ch; }
+.res-license { margin-top: 0.3rem !important; }
+.file-link { font-weight: 600; white-space: nowrap; }
+.file-ext { font-size: 0.75rem; font-weight: 600; border: 1px solid currentColor; padding: 0 0.3rem; margin-left: 0.3rem; vertical-align: 0.1em; }
+@media (max-width: 40rem) { .res-list li { flex-direction: column; gap: 0.4rem; } }
+
+.issues { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.5rem; }
+.issue { background: var(--paper); border-top: 4px solid var(--verdigris); padding: 1.25rem 1.25rem 1.5rem; }
+.issue-no { font-size: var(--step--1); color: var(--muted); margin-bottom: 0.3rem; }
+
+.awards li { padding-block: 0.6rem; border-top: 1px solid var(--rule); }
+.aw-year { font-family: var(--serif); font-weight: 600; margin-right: 0.5rem; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; align-items: end; margin-bottom: 1.5rem; }
+.filters label { display: flex; flex-direction: column; font-size: var(--step--1); color: var(--muted); gap: 0.25rem; }
+.filters select { font: inherit; font-size: var(--step-0); color: var(--ink); background: var(--paper); border: 1px solid var(--ink); padding: 0.4rem 0.6rem; min-width: 12rem; }
+.filter-count { margin: 0 0 0.5rem; color: var(--muted); font-size: var(--step--1); }
+.brief { padding-block: 1.1rem; border-top: 1px solid var(--rule); max-width: 72ch; }
+.brief h3 { margin-bottom: 0.3rem; }
+.brief-meta { color: var(--muted); font-size: var(--step--1); margin-bottom: 0.4rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.5rem; }
+.tags span { font-size: 0.8125rem; border: 1px solid var(--rule); background: var(--paper); padding: 0.05rem 0.5rem; }
+.badge { color: var(--ochre-text); font-weight: 600; }
+.brief details { margin-bottom: 0.5rem; }
+.brief summary { cursor: pointer; font-weight: 500; }
+
+.contact-grid { display: grid; grid-template-columns: 20rem minmax(0, 1fr); gap: 3rem; padding-bottom: 3rem; }
+@media (max-width: 52rem) { .contact-grid { grid-template-columns: 1fr; gap: 1rem; } }
+.back { display: inline-block; margin-block: 1rem 3rem; }
+
+/* ===== Підвал: емблема ЄС і дисклеймер ===== */
+.site-foot { background: var(--paper); border-top: 2px solid var(--ink); margin-top: 2rem; font-size: var(--step--1); }
+.foot-grid { display: grid; grid-template-columns: 17rem minmax(0, 1.4fr) minmax(0, 1fr); gap: 2rem 3rem; padding-block: 2.5rem; }
+.eu-lockup { display: flex; align-items: center; gap: 0.9rem; align-self: start; }
+.eu-lockup img { width: 81px; height: 54px; flex: none; }
+.eu-funded { margin: 0; font-family: Arial, var(--sans); font-size: 1rem; line-height: 1.25; color: #000; max-width: 11rem; }
+.disclaimer { margin: 0; color: var(--muted); max-width: 60ch; }
+.foot-meta p { margin: 0 0 0.75rem; }
+.foot-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
+@media (max-width: 62rem) { .foot-grid { grid-template-columns: 1fr; } }
+
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+@media print { .site-head nav, .lang-switch, .actions { display: none; } body { background: #fff; } }

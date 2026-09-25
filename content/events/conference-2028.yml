@@ -1,0 +1,23 @@
+url: conference-2028
+kind: conference
+number: 2
+date: 2028-08-24
+tentative: true
+time: ""
+format: hybrid
+title:
+  uk: "Відновлення спадщини в постраждалих від війни контекстах: досвід ЄС і українська практика"
+  en: "Heritage recovery in war-affected contexts: EU experience and Ukrainian practice"
+location:
+  uk: "Київ, КНУБА, та онлайн"
+  en: "Kyiv, KNUBA, and online"
+summary:
+  uk: "Порівняльні підходи до післяконфліктної регенерації спадщини та інклюзивного розвитку міст."
+  en: "Comparative perspectives on post-conflict heritage regeneration and inclusive urban development."
+description: { uk: "", en: "" }
+programme: { uk: "", en: "" }
+registration_url: ""
+participants: 0
+report: { uk: "", en: "" }
+video_url: ""
+materials: []

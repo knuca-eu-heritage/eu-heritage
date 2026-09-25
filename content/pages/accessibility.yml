@@ -1,0 +1,19 @@
+title:
+  uk: Заява про доступність
+  en: Accessibility statement
+lede:
+  uk: Інклюзія — одна з головних тем модуля, тому ми прагнемо, щоб сайт був зручним для всіх.
+  en: Inclusion is a core theme of the Module, so we want this website to work for everyone.
+body:
+  uk: |
+    Ми орієнтуємося на рівень AA стандарту WCAG 2.1. Сайт можна повністю переглядати з клавіатури, він коректно масштабується до 200 %, має достатній контраст тексту та позначену мову кожної сторінки.
+
+    **Відомі обмеження.** Частина PDF-документів, зокрема студентські брифи, може бути не повністю доступною для програм читання з екрана. Записи вебінарів супроводжуються субтитрами, але автоматичні субтитри можуть містити помилки.
+
+    Якщо ви натрапили на бар'єр або потребуєте матеріал в іншому форматі, напишіть нам (адреса на сторінці «Контакти»). Ми відповімо протягом п'яти робочих днів.
+  en: |
+    We aim to meet WCAG 2.1 level AA. The site can be used entirely with a keyboard, scales correctly to 200%, has sufficient text contrast and declares the language of every page.
+
+    **Known limitations.** Some PDF documents, including student briefs, may not be fully accessible to screen readers. Webinar recordings have captions, but automatic captions may contain errors.
+
+    If you encounter a barrier or need material in another format, write to us (address on the Contact page). We will reply within five working days.
