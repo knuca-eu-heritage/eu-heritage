@@ -46,8 +46,12 @@
   <footer class="site-foot">
     <div class="wrap foot-grid">
       <div class="eu-lockup">
+        {% if lang == "en" %}
+        <img class="eu-funded-logo" src="/assets/img/eu-funded-en.png" alt="{{ "footer.funded" | t(lang) }}" width="286" height="60">
+        {% else %}
         <img src="/assets/img/eu-emblem.svg" alt="" width="81" height="54">
         <p class="eu-funded">{{ "footer.funded" | t(lang) }}</p>
+        {% endif %}
       </div>
       <p class="disclaimer">{{ "footer.disclaimer" | t(lang) }}</p>
       <div class="foot-meta">
