@@ -1,0 +1,17 @@
+---
+pagination:
+  data: db.simplePages
+  size: 1
+  alias: sp
+permalink: "/{{ sp.lang }}/{{ sp.key }}/"
+eleventyComputed:
+  lang: "{{ sp.lang }}"
+---
+{% extends "base.njk" %}
+{% import "macros.njk" as m %}
+{% set P = db.pages[sp.key] %}
+{% set title = P.title | L(lang) %}
+{% block main %}
+{{ m.pageHead(P, lang) }}
+<div class="wrap prose">{{ P.body | L(lang) | md | safe }}</div>
+{% endblock %}

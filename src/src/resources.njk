@@ -1,0 +1,35 @@
+---
+pagination:
+  data: db.langs
+  size: 1
+  alias: lang
+permalink: "/{{ lang }}/resources/"
+---
+{% extends "base.njk" %}
+{% import "macros.njk" as m %}
+{% set P = db.pages.resources %}
+{% set title = P.title | L(lang) %}
+{% block main %}
+{{ m.pageHead(P, lang) }}
+<div class="wrap prose">{{ P.body | L(lang) | md | safe }}</div>
+{% for cat in ["teaching", "recordings", "proceedings", "reports", "eudocs"] %}
+{% set items = db.resources | where("category", cat) %}
+<section class="wrap block" aria-labelledby="c-{{ cat }}">
+  <h2 id="c-{{ cat }}">{{ ("res.cat." ~ cat) | t(lang) }}</h2>
+  {% if items.length %}
+  <ul class="res-list">
+    {% for r in items %}
+    <li>
+      <div>
+        <h3>{{ r.title | L(lang) }}</h3>
+        {% if r.description %}<p>{{ r.description | L(lang) }}</p>{% endif %}
+        {% if r.license %}<p class="res-license">{{ r.license }}</p>{% endif %}
+      </div>
+      {{ m.fileLink(r, lang, "res.open" | t(lang)) }}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}<p class="empty">{{ "res.empty" | t(lang) }}</p>{% endif %}
+</section>
+{% endfor %}
+{% endblock %}

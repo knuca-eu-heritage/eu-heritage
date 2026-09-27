@@ -1,0 +1,14 @@
+---
+permalink: "/404.html"
+lang: uk
+---
+{% extends "base.njk" %}
+{% set title = "notfound.title" | t("uk") %}
+{% block main %}
+<header class="page-head wrap">
+  <h1>{{ "notfound.title" | t("uk") }}</h1>
+  <p class="lede">{{ "notfound.text" | t("uk") }}</p>
+  <p lang="en">{{ "notfound.title" | t("en") }}. {{ "notfound.text" | t("en") }}</p>
+  <p class="actions"><a class="btn" href="/uk/">{{ "nav.home" | t("uk") }}</a> <a class="btn btn-quiet" href="/en/" lang="en">Home</a></p>
+</header>
+{% endblock %}

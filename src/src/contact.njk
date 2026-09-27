@@ -1,0 +1,28 @@
+---
+pagination:
+  data: db.langs
+  size: 1
+  alias: lang
+permalink: "/{{ lang }}/contact/"
+---
+{% extends "base.njk" %}
+{% import "macros.njk" as m %}
+{% set P = db.pages.contact %}
+{% set S = db.settings %}
+{% set title = P.title | L(lang) %}
+{% block main %}
+{{ m.pageHead(P, lang) }}
+<div class="wrap contact-grid">
+  <dl class="facts is-stacked">
+    {% if S.email %}<div><dt>{{ "contact.email" | t(lang) }}</dt><dd><a href="mailto:{{ S.email }}">{{ S.email }}</a></dd></div>{% endif %}
+    {% if S.address %}<div><dt>{{ "contact.address" | t(lang) }}</dt><dd>{{ S.address | L(lang) | md | safe }}</dd></div>{% endif %}
+  </dl>
+  <div>
+    <div class="prose">{{ P.body | L(lang) | md | safe }}</div>
+    <p class="actions">
+      {% if S.email %}<a class="btn" href="mailto:{{ S.email }}">{{ "contact.write" | t(lang) }}</a>{% endif %}
+      {% if S.subscribe_url %}<a class="btn btn-quiet" href="{{ S.subscribe_url }}">{{ "contact.subscribe" | t(lang) }}</a>{% endif %}
+    </p>
+  </div>
+</div>
+{% endblock %}

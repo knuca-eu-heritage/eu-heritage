@@ -1,0 +1,24 @@
+---
+pagination:
+  data: db.newsPages
+  size: 1
+  alias: np
+permalink: "/{{ np.lang }}/news/{{ np.item.slug }}/"
+eleventyComputed:
+  lang: "{{ np.lang }}"
+---
+{% extends "base.njk" %}
+{% set n = np.item %}
+{% set title = n.title | L(lang) %}
+{% block main %}
+<article>
+  <header class="page-head wrap">
+    <p class="news-date"><time datetime="{{ n.date }}">{{ n.date | fdate(lang) }}</time></p>
+    <h1>{{ n.title | L(lang) }}</h1>
+    {% if n.summary %}<p class="lede">{{ n.summary | L(lang) }}</p>{% endif %}
+  </header>
+  {% if n.image %}<figure class="wrap news-figure"><img src="{{ n.image }}" alt="{{ n.image_alt | L(lang) }}"></figure>{% endif %}
+  <div class="wrap prose">{{ n.body | L(lang) | md | safe }}</div>
+  <p class="wrap"><a class="more back" href="/{{ lang }}/news/">{{ "news.back" | t(lang) }}</a></p>
+</article>
+{% endblock %}

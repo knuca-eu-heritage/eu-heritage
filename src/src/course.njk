@@ -1,0 +1,46 @@
+---
+pagination:
+  data: db.langs
+  size: 1
+  alias: lang
+permalink: "/{{ lang }}/course/"
+---
+{% extends "base.njk" %}
+{% import "macros.njk" as m %}
+{% set P = db.pages.course %}
+{% set title = P.title | L(lang) %}
+{% block main %}
+{{ m.pageHead(P, lang) }}
+{% if P.facts and P.facts.length %}
+<dl class="wrap facts">
+  {% for f in P.facts %}<div><dt>{{ f.label | L(lang) }}</dt><dd>{{ f.value | L(lang) }}</dd></div>{% endfor %}
+</dl>
+{% endif %}
+<div class="wrap prose">{{ P.body | L(lang) | md | safe }}</div>
+
+{% if P.modules and P.modules.length %}
+<section class="wrap block" aria-labelledby="mod-h">
+  <h2 id="mod-h">{{ "course.modules" | t(lang) }}</h2>
+  <ol class="modules">
+    {% for mod in P.modules %}
+    <li class="module">
+      <div class="module-hours" aria-hidden="true" style="--h: {{ mod.hours }}"><span>{{ mod.hours }}</span> {{ "course.hours" | t(lang) }}<i class="hours-bar"></i></div>
+      <div>
+        <h3>{{ mod.title | L(lang) }}</h3>
+        <p class="module-meta">{{ mod.sessions }} {{ "course.sessions" | t(lang) }}, {{ mod.hours }} {{ "course.hours" | t(lang) }}. {{ "course.lead" | t(lang) }}: {{ mod.lead | L(lang) }}</p>
+        <div class="prose">{{ mod.description | L(lang) | md | safe }}</div>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+{% endif %}
+{% if P.students and (P.students | L(lang)) %}
+<section class="wrap block" aria-labelledby="st-h">
+  <div class="callout">
+    <h2 id="st-h">{{ P.students_title | L(lang) }}</h2>
+    <div class="prose">{{ P.students | L(lang) | md | safe }}</div>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

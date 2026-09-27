@@ -1,0 +1,49 @@
+---
+pagination:
+  data: db.eventPages
+  size: 1
+  alias: ep
+permalink: "/{{ ep.lang }}/events/{{ ep.item.slug }}/"
+eleventyComputed:
+  lang: "{{ ep.lang }}"
+---
+{% extends "base.njk" %}
+{% import "macros.njk" as m %}
+{% set e = ep.item %}
+{% set title = e.title | L(lang) %}
+{% block main %}
+<article class="event-page">
+  <header class="page-head wrap">
+    <p class="event-kind">{{ ("events.kind." ~ e.kind) | t(lang) }}{% if e.number %} {{ e.number }}{% endif %}</p>
+    <h1>{{ e.title | L(lang) }}</h1>
+    {% if e.summary %}<p class="lede">{{ e.summary | L(lang) }}</p>{% endif %}
+  </header>
+  <div class="wrap event-grid">
+    <dl class="facts is-stacked">
+      <div><dt>{{ "events.when" | t(lang) }}</dt><dd>{{ e.date | fdate(lang, e.tentative) }}{% if e.time and not e.tentative %}, {{ e.time }}{% endif %}{% if e.tentative %}<br><em>{{ "events.tentative" | t(lang) }}</em>{% endif %}</dd></div>
+      {% if e.format %}<div><dt>{{ "events.format" | t(lang) }}</dt><dd>{{ ("events.fmt." ~ e.format) | t(lang) }}</dd></div>{% endif %}
+      {% if e.location and (e.location | L(lang)) %}<div><dt>{{ "events.where" | t(lang) }}</dt><dd>{{ e.location | L(lang) }}</dd></div>{% endif %}
+      {% if e.past and e.participants %}<div><dt>{{ "events.participants" | t(lang) }}</dt><dd>{{ e.participants }}</dd></div>{% endif %}
+      {% if not e.past and e.registration_url %}<div class="facts-action"><a class="btn" href="{{ e.registration_url }}">{{ "events.register" | t(lang) }}</a></div>{% endif %}
+    </dl>
+    <div class="event-content">
+      {% if e.description and (e.description | L(lang)) %}<div class="prose">{{ e.description | L(lang) | md | safe }}</div>{% endif %}
+      {% if e.programme and (e.programme | L(lang)) %}
+      <section aria-labelledby="prog-h"><h2 id="prog-h">{{ "events.programme" | t(lang) }}</h2><div class="prose">{{ e.programme | L(lang) | md | safe }}</div></section>
+      {% endif %}
+      {% if e.past and e.report and (e.report | L(lang)) %}
+      <section aria-labelledby="rep-h"><h2 id="rep-h">{{ "events.report" | t(lang) }}</h2><div class="prose">{{ e.report | L(lang) | md | safe }}</div></section>
+      {% endif %}
+      {% if e.video_url %}
+      <section aria-labelledby="rec-h"><h2 id="rec-h">{{ "events.recording" | t(lang) }}</h2><p><a class="file-link" href="{{ e.video_url }}">{{ "events.watch" | t(lang) }}</a></p></section>
+      {% endif %}
+      {% if e.materials and e.materials.length %}
+      <section aria-labelledby="mat-h"><h2 id="mat-h">{{ "events.materials" | t(lang) }}</h2>
+        <ul class="res-list">{% for mt in e.materials %}<li><span>{{ mt.title | L(lang) }}</span> {{ m.fileLink(mt, lang, "res.open" | t(lang)) }}</li>{% endfor %}</ul>
+      </section>
+      {% endif %}
+    </div>
+  </div>
+  <p class="wrap"><a class="more back" href="/{{ lang }}/events/">{{ "events.back" | t(lang) }}</a></p>
+</article>
+{% endblock %}
