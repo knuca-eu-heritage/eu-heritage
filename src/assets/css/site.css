@@ -254,9 +254,7 @@ p { margin: 0 0 1em; }
 .site-foot { background: var(--paper); border-top: 2px solid var(--ink); margin-top: 2rem; font-size: var(--step--1); }
 .foot-grid { display: grid; grid-template-columns: 17rem minmax(0, 1.4fr) minmax(0, 1fr); gap: 2rem 3rem; padding-block: 2.5rem; }
 .eu-lockup { display: flex; align-items: center; gap: 0.9rem; align-self: start; }
-.eu-lockup img { width: 81px; height: 54px; flex: none; }
-.eu-lockup img.eu-funded-logo { width: 286px; height: auto; max-width: 100%; }
-.eu-funded { margin: 0; font-family: Arial, var(--sans); font-size: 1rem; line-height: 1.25; color: #000; max-width: 11rem; }
+.eu-funded-logo { display: block; width: auto; height: 60px; max-width: 100%; object-fit: contain; object-position: left; }
 .disclaimer { margin: 0; color: var(--muted); max-width: 60ch; }
 .foot-meta p { margin: 0 0 0.75rem; }
 .foot-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
