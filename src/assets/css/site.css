@@ -13,17 +13,19 @@
 @font-face { font-family: "IBM Plex Sans"; font-weight: 600; font-display: swap; src: url("../fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
 /* ===== Токени =====
-   Палітра взята з історичного Києва: штукатурка фасадів, патина мідних бань, вохра. */
+   Палітра побудована навколо бурштинового #f8b134 з теплими нейтральними.
+   Сам бурштин має контраст 1,85:1 на білому, тож він лише тло/акцент (текст на ньому — --ink);
+   для тексту — --amber-text (≥ 5,9:1), для графічних позначок стану — --amber-strong (≥ 3,5:1). */
 :root {
-  --ink: #1f2a2c;
-  --muted: #56625f;
-  --plaster: #f4f5f1;
+  --ink: #2a241c;
+  --muted: #675d4f;
+  --plaster: #faf6ee;
   --paper: #ffffff;
-  --verdigris: #2e6a62;
-  --verdigris-deep: #245650;
-  --ochre: #b8862a;
-  --ochre-text: #8a6417;
-  --rule: #c9d1cc;
+  --amber: #f8b134;
+  --amber-deep: #e89c16;
+  --amber-strong: #b87400;
+  --amber-text: #855400;
+  --rule: #e3d9c6;
 
   --serif: "Literata", "Georgia", "Times New Roman", serif;
   --sans: "IBM Plex Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -48,7 +50,7 @@ body {
   font: 400 var(--step-0)/1.6 var(--sans);
 }
 img { max-width: 100%; height: auto; }
-a { color: var(--verdigris-deep); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a { color: var(--amber-text); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
 a:hover { text-decoration-thickness: 2px; }
 :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
 
@@ -68,7 +70,7 @@ p { margin: 0 0 1em; }
 .head-row { display: flex; align-items: center; gap: 1.5rem; min-height: 4.5rem; }
 .brand { display: flex; align-items: center; gap: 0.75rem; color: var(--ink); text-decoration: none; margin-right: auto; }
 .brand-mark { width: 2rem; height: 2rem; flex: none; }
-.brand-hl { fill: var(--verdigris); }
+.brand-hl { fill: var(--amber); }
 .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
 .brand-name { font-family: var(--serif); font-weight: 600; font-size: 1.125rem; letter-spacing: 0.02em; }
 .brand-sub { font-size: var(--step--1); color: var(--muted); }
@@ -76,7 +78,7 @@ p { margin: 0 0 1em; }
 .nav-list { list-style: none; margin: 0; padding: 0; display: flex; gap: 0.25rem 1.25rem; flex-wrap: wrap; }
 .nav-list a { color: var(--ink); text-decoration: none; font-weight: 500; padding: 0.35rem 0; border-bottom: 2px solid transparent; }
 .nav-list a:hover { border-bottom-color: var(--rule); }
-.nav-list a[aria-current="page"] { border-bottom-color: var(--verdigris); }
+.nav-list a[aria-current="page"] { border-bottom-color: var(--amber-strong); }
 .lang-switch { font-weight: 600; color: var(--ink); text-decoration: none; border: 1px solid var(--ink); padding: 0.2rem 0.55rem; font-size: var(--step--1); }
 .lang-switch:hover { background: var(--ink); color: var(--paper); }
 
@@ -100,20 +102,20 @@ p { margin: 0 0 1em; }
 .lede { font-size: var(--step-1); line-height: 1.5; max-width: 60ch; color: var(--ink); }
 .plan { width: 100%; height: auto; display: block; }
 .plan .b { fill: var(--ink); opacity: 0.86; }
-.plan .hl { fill: var(--verdigris); }
-.plan .zone { fill: none; stroke: var(--ochre); stroke-width: 2.5; stroke-dasharray: 10 6; stroke-linejoin: round; }
+.plan .hl { fill: var(--amber); }
+.plan .zone { fill: none; stroke: var(--amber-text); stroke-width: 2.5; stroke-dasharray: 10 6; stroke-linejoin: round; }
 @media (max-width: 52rem) {
   .hero-grid { grid-template-columns: 1fr; gap: 1.5rem; padding-block: 1.5rem 2.5rem; }
   .hero-plan { order: -1; max-height: 14rem; overflow: hidden; }
 }
 
 .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
-.btn { display: inline-block; background: var(--verdigris); color: var(--paper); text-decoration: none; font-weight: 600; padding: 0.7rem 1.2rem; border: 2px solid var(--verdigris); border-radius: 2px; }
-.btn:hover { background: var(--verdigris-deep); border-color: var(--verdigris-deep); }
+.btn { display: inline-block; background: var(--amber); color: var(--ink); text-decoration: none; font-weight: 600; padding: 0.7rem 1.2rem; border: 2px solid var(--amber); border-radius: 2px; }
+.btn:hover { background: var(--amber-deep); border-color: var(--amber-deep); }
 .btn-quiet { background: transparent; color: var(--ink); border-color: var(--ink); }
 .btn-quiet:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 
-.notice { margin-top: 2rem; border-left: 4px solid var(--ochre); background: var(--paper); padding: 1rem 1.25rem; }
+.notice { margin-top: 2rem; border-left: 4px solid var(--amber); background: var(--paper); padding: 1rem 1.25rem; }
 .notice p:last-child { margin: 0; }
 
 /* ===== Показники (ділянки на плані) ===== */
@@ -127,10 +129,10 @@ p { margin: 0 0 1em; }
 .ledger-num { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
 .ledger-num strong { color: var(--ink); font-family: var(--serif); font-size: var(--step-1); font-weight: 600; }
 .bar { display: block; height: 0.75rem; background: var(--paper); border: 1px solid var(--ink); }
-.bar span { display: block; height: 100%; background: var(--verdigris); }
+.bar span { display: block; height: 100%; background: var(--amber-strong); }
 .plots { display: flex; gap: 0.4rem; flex-wrap: wrap; }
 .plot { width: 1.35rem; height: 1.35rem; border: 1.5px solid var(--ink); background: var(--paper); }
-.plot.done { background: var(--verdigris); border-color: var(--verdigris); }
+.plot.done { background: var(--amber-strong); border-color: var(--amber-strong); }
 @media (max-width: 40rem) {
   .ledger-row { grid-template-columns: 1fr auto; gap: 0.5rem 1rem; }
   .ledger-row dt { grid-column: 1 / -1; }
@@ -152,7 +154,7 @@ p { margin: 0 0 1em; }
 .d-day { font-family: var(--serif); font-size: 2rem; font-weight: 600; }
 .d-month, .d-year { font-size: var(--step--1); color: var(--muted); }
 .event-date .d-month:first-child { font-family: var(--serif); font-size: 1.25rem; color: var(--ink); font-weight: 600; }
-.is-upcoming .d-day, .is-upcoming .event-date .d-month:first-child { color: var(--verdigris-deep); }
+.is-upcoming .d-day, .is-upcoming .event-date .d-month:first-child { color: var(--amber-text); }
 .event-kind { font-size: var(--step--1); color: var(--muted); margin-bottom: 0.2rem; }
 .event-title { font-size: var(--step-1); margin-bottom: 0.3rem; }
 .event-title a { color: var(--ink); text-decoration: none; }
@@ -184,7 +186,7 @@ p { margin: 0 0 1em; }
 
 .objectives { max-width: 68ch; padding-left: 1.5rem; }
 .objectives li { margin-bottom: 0.75rem; padding-left: 0.25rem; }
-.objectives li::marker { font-family: var(--serif); font-weight: 600; color: var(--verdigris-deep); }
+.objectives li::marker { font-family: var(--serif); font-weight: 600; color: var(--amber-text); }
 
 .team-mini { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.25rem; }
 .team-list { display: grid; gap: 2.5rem; padding-bottom: 3rem; }
@@ -198,11 +200,11 @@ p { margin: 0 0 1em; }
 /* Модулі курсу: тривалість у годинах як масштабна смуга */
 .module { display: grid; grid-template-columns: 6rem minmax(0, 1fr); gap: 1.5rem; padding-block: 1.5rem; border-top: 1px solid var(--rule); }
 .module-hours { font-size: var(--step--1); color: var(--muted); }
-.hours-bar { display: block; height: 0.4rem; width: calc(var(--h) * 0.38rem); background: var(--verdigris); margin-top: 0.5rem; }
+.hours-bar { display: block; height: 0.4rem; width: calc(var(--h) * 0.38rem); background: var(--amber-strong); margin-top: 0.5rem; }
 .module-hours span { display: block; font-family: var(--serif); font-size: 2.25rem; font-weight: 600; color: var(--ink); line-height: 1; }
 .module h3 { margin-bottom: 0.3rem; }
 .module-meta { color: var(--muted); font-size: var(--step--1); }
-.callout { background: var(--paper); border: 1px solid var(--rule); border-left: 4px solid var(--verdigris); padding: 1.5rem 1.75rem; margin-bottom: 2rem; }
+.callout { background: var(--paper); border: 1px solid var(--rule); border-left: 4px solid var(--amber); padding: 1.5rem 1.75rem; margin-bottom: 2rem; }
 .callout h2 { margin-top: 0; }
 
 /* Новини */
@@ -225,7 +227,7 @@ p { margin: 0 0 1em; }
 @media (max-width: 40rem) { .res-list li { flex-direction: column; gap: 0.4rem; } }
 
 .issues { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.5rem; }
-.issue { background: var(--paper); border-top: 4px solid var(--verdigris); padding: 1.25rem 1.25rem 1.5rem; }
+.issue { background: var(--paper); border-top: 4px solid var(--amber); padding: 1.25rem 1.25rem 1.5rem; }
 .issue-no { font-size: var(--step--1); color: var(--muted); margin-bottom: 0.3rem; }
 
 .awards li { padding-block: 0.6rem; border-top: 1px solid var(--rule); }
@@ -240,7 +242,7 @@ p { margin: 0 0 1em; }
 .brief-meta { color: var(--muted); font-size: var(--step--1); margin-bottom: 0.4rem; }
 .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.5rem; }
 .tags span { font-size: 0.8125rem; border: 1px solid var(--rule); background: var(--paper); padding: 0.05rem 0.5rem; }
-.badge { color: var(--ochre-text); font-weight: 600; }
+.badge { color: var(--amber-text); font-weight: 600; }
 .brief details { margin-bottom: 0.5rem; }
 .brief summary { cursor: pointer; font-weight: 500; }
 
