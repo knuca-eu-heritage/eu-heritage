@@ -1,65 +1,121 @@
 title:
-  uk: Навчальний курс
-  en: The course
+  uk: Навчальний курс «Підходи ЄС до міського планування та регенерації на основі
+    культурної спадщини»
+  en: The course "EU Approaches to Heritage-Based Urban Planning and Regeneration"
 lede:
-  uk: Вибіркова дисципліна для студентів бакалаврату й магістратури спеціальності «Урбаністика та просторове планування».
-  en: An elective for Bachelor's and Master's students in urban and spatial planning.
+  uk: Вибіркова дисципліна для студентів бакалаврату й магістратури освітніх
+    програм «Міське будівництво та господарство» й «Урбаністика та просторове
+    планування»
+  en: An elective course for Bachelor's and Master's students in urban planning
+    and spatial development
 facts:
-  - label: { uk: Обсяг, en: Workload }
-    value: { uk: 3 кредити ЄКТС, en: 3 ECTS }
-  - label: { uk: Семестр, en: Semester }
-    value: { uk: Весняний (лютий–червень), en: Spring (February–June) }
-  - label: { uk: Групи, en: Groups }
-    value: { uk: Дві групи щороку, en: Two groups each year }
-  - label: { uk: Мова, en: Language }
-    value: { uk: Українська, en: Ukrainian }
+  - label:
+      uk: Обсяг
+      en: Workload
+    value:
+      uk: 3 кредити ЄКТС
+      en: 3 ECTS
+  - label:
+      uk: Семестр
+      en: Semester
+    value:
+      uk: "Весняний "
+      en: "Spring "
+  - label:
+      uk: Групи
+      en: Groups
+    value:
+      uk: Дві групи щороку
+      en: Two groups each year
+  - label:
+      uk: Мова
+      en: Language
+    value:
+      uk: Українська
+      en: Ukrainian
 body:
-  uk: |
-    Курс побудовано за логікою від загального до конкретного: від цінностей і політик ЄС через рамки планування та регенерації до управління спадщиною на рівні окремих об'єктів і громад. Завершується він презентаціями індивідуальних policy briefs.
-  en: |
-    The course moves from the general to the specific: from EU values and policies, through planning and regeneration frameworks, to heritage governance at the level of individual sites and communities. It ends with presentations of individual policy briefs.
+  uk: "Курс побудовано за логікою від загального до конкретного: від цінностей і
+    політик ЄС через рамки планування та регенерації до управління спадщиною на
+    рівні окремих пам'яток і громад. Завершується він презентаціями
+    індивідуальних аналітичних записок."
+  en: "The course moves from the general to the specific: from EU values and
+    policies, through planning and regeneration frameworks, to heritage
+    governance at site and community level. It concludes with presentations of
+    individual policy briefs."
 modules:
   - title:
-      uk: "Модуль 1. Урбаністична політика ЄС: цінності, інклюзія та участь"
+      uk: "Модуль 1. Рамка міської політики ЄС: цінності, інклюзія та участь"
       en: "Module 1. EU Urban Policy Framework: Values, Inclusion, and Participation"
     sessions: 4
     hours: 8
-    lead: { uk: Д-р Надія Гербут, en: Dr Nadiia Herbut }
+    lead:
+      uk: Надія Гербут
+      en: Nadiia Herbut
     description:
-      uk: Цінності ЄС (стаття 2 ДЄС) і демократичне врядування як основа урбаністичної політики; інституції ЄС; ґендерний мейнстрімінг; інклюзивний розвиток міст; Новий європейський Баугауз; зобов'язання України як кандидата на вступ.
-      en: EU values (Article 2 TEU) and democratic governance as foundations of urban policy; EU institutions; gender mainstreaming; inclusive urban development; the New European Bauhaus; Ukraine's obligations as a candidate country.
+      uk: Цінності ЄС (стаття 2 ДЄС) і демократичне врядування як основа міської
+        політики; інституції ЄС; гендерний мейнстримінг; інклюзивний розвиток
+        міст; New European Bauhaus; зобов'язання України як кандидата на вступ.
+      en: EU values (Article 2 TEU) and democratic governance as foundations of urban
+        policy; EU institutions; gender mainstreaming; inclusive urban
+        development; the New European Bauhaus; Ukraine's obligations as a
+        candidate country.
   - title:
-      uk: "Модуль 2. Планування та регенерація на основі спадщини: досвід ЄС"
+      uk: "Модуль 2. Планування та регенерація на основі культурної спадщини: досвід
+        ЄС"
       en: "Module 2. Heritage-Based Urban Planning and Regeneration: EU Experience"
     sessions: 5
     hours: 10
-    lead: { uk: Проф. Алірза Мамедов, en: Prof. Alirza Mamedov }
+    lead:
+      uk: Алірза Мамедов
+      en: Alirza Mamedov
     description:
-      uk: Територіальний порядок денний 2030 і Нова Лейпцизька хартія; підходи ЄС до просторового планування з урахуванням спадщини; охорона спадщини в містобудівній документації; кейси з держав-членів ЄС.
-      en: The Territorial Agenda 2030 and the New Leipzig Charter; EU approaches to heritage-sensitive spatial planning; heritage protection in planning documentation; case studies from EU Member States.
+      uk: Територіальний порядок денний 2030 і Нова Лейпцизька хартія; підходи ЄС до
+        просторового планування з урахуванням спадщини; охорона спадщини в
+        містобудівній документації; кейси з держав-членів ЄС.
+      en: The Territorial Agenda 2030 and the New Leipzig Charter; EU approaches to
+        heritage-sensitive spatial planning; heritage protection in planning
+        documentation; case studies from EU Member States.
   - title:
-      uk: "Модуль 3. Міська культурна спадщина: підходи ЄС до управління та регенерації"
-      en: "Module 3. Urban Cultural Heritage: EU Approaches to Management and Regeneration"
+      uk: "Модуль 3. Міська культурна спадщина: підходи ЄС до управління та
+        регенерації"
+      en: "Module 3. Urban Cultural Heritage: EU Approaches to Management and
+        Regeneration"
     sessions: 7
     hours: 14
-    lead: { uk: Д-р Любов Апостолова-Сосса, en: Dr Liubov Apostolova-Sossa }
+    lead:
+      uk: Любов Апостолова-Сосса
+      en: Liubov Apostolova-Sossa
     description:
-      uk: Рамка дій ЄС щодо культурної спадщини; Фарська конвенція; принципи якості ICOMOS для втручань, що фінансуються ЄС; методи залучення зацікавлених сторін; збереження історичного ландшафту; адаптивне використання історичних будівель.
-      en: The EU Framework for Action on Cultural Heritage; the Faro Convention; ICOMOS Quality Principles for EU-funded interventions; stakeholder engagement methods; historic landscape preservation; adaptive reuse of heritage buildings.
+      uk: Рамка дій ЄС у сфері культурної спадщини; Конвенція Фаро; принципи якості
+        ICOMOS для втручань, що фінансуються ЄС; методи залучення стейкхолдерів;
+        партисипативні інструменти та проєктування консультацій; збереження
+        історичного ландшафту; адаптивне повторне використання історичних
+        будівель.
+      en: The EU Framework for Action on Cultural Heritage; the Faro Convention;
+        ICOMOS Quality Principles for EU-funded interventions; stakeholder
+        engagement methods; historic landscape preservation; adaptive reuse of
+        heritage buildings.
   - title:
-      uk: Презентації policy briefs
-      en: Policy brief presentations
+      uk: Підсумкові презентації та оцінювання
+      en: Final presentations and assessment
     sessions: 2
     hours: 4
-    lead: { uk: Д-р Надія Гербут і викладацька команда, en: Dr Nadiia Herbut and the teaching team }
+    lead:
+      uk: Надія Гербут і викладацька команда
+      en: Nadiia Herbut and the teaching team
     description:
-      uk: Студенти представляють власні policy briefs обсягом 2–3 сторінки й отримують відгуки викладачів і колег.
-      en: Students present their own 2–3 page policy briefs and receive feedback from the teaching team and peers.
+      uk: "Студенти представляють індивідуальні policy brief (5–7 хвилин) і отримують
+        зворотний зв'язок від викладацької команди та однокурсників. Оцінювання
+        за рубрикою: релевантність ЄС, використання доказів, реалістичність,
+        інклюзивність, чіткість викладу."
+      en: "Students present their individual policy briefs (5–7 minutes) and receive
+        feedback from the teaching team and peers. Assessment follows a rubric:
+        EU relevance, evidence use, feasibility, inclusiveness and clarity."
 students_title:
   uk: Як записатися
   en: How to enrol
 students:
-  uk: |
-    Курс обирається як вибіркова дисципліна в загальному порядку вибору дисциплін КНУБА. Оцінювання базується на policy brief і його презентації за єдиною рубрикою: відповідність рамкам ЄС, використання доказів, реалістичність, інклюзивність і доступність, ясність викладу.
-  en: |
-    The course is chosen as an elective through KNUBA's standard elective selection procedure. Assessment is based on the policy brief and its presentation, using a common rubric: EU relevance, use of evidence, feasibility, inclusiveness and accessibility, and clarity.
+  uk: "Курс обирається як вибіркова дисципліна в загальному порядку вибору
+    дисциплін КНУБА. "
+  en: "The course is chosen as an elective through KNUCA's standard elective
+    selection procedure. "
