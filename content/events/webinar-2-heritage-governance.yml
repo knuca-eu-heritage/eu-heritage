@@ -1,23 +1,25 @@
-url: webinar-2-heritage-governance
-kind: webinar
-number: 2
-date: 2027-11-18
-tentative: true
-time: ""
-format: online
+url: conference-2027
+kind: conference
+number: 1
 title:
-  uk: "Європейські рамки управління культурною спадщиною"
-  en: "European frameworks for heritage governance"
+  uk: "Містопланування та регенерація на основі культурної спадщини: підходи ЄС
+    для повоєнної відбудови України"
+  en: "Heritage-Based Urban Planning and Regeneration: EU Approaches for Ukraine’s
+    Post-War Reconstruction"
+date: 2027-06-08
+tentative: true
+format: hybrid
 location:
-  uk: "Онлайн"
-  en: "Online"
+  uk: Київ, КНУБА, та онлайнОнлайн
+  en: Kyiv, KNUCA, and online
 summary:
-  uk: "Архітектура європейського врядування у сфері спадщини та її стандарти."
-  en: "The architecture of European heritage governance and its standard-setting instruments."
-description: { uk: "", en: "" }
-programme: { uk: "", en: "" }
-registration_url: ""
+  uk: Архітектура європейського врядування у сфері спадщини та її стандарти.
+  en: The architecture of European heritage governance and its standard-setting
+    instruments.
+description:
+  uk: Перша щорічна конференція модуля про актуальні політики ЄС і їхнє значення
+    для відновлення історичних міст України.
+  en: The Module's first annual conference on current EU policy and its relevance
+    for the recovery of Ukraine's historic cities.
 participants: 0
-report: { uk: "", en: "" }
-video_url: ""
-materials: []
+draft: false
