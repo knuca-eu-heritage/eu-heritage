@@ -75,10 +75,10 @@ Ukraine's post-war reconstruction and EU candidate status call for urban planner
 
 ---
 
-<img src="src/assets/img/eu-emblem.svg" alt="" width="81" height="54"> **Фінансується Європейським Союзом / Funded by the European Union**
+<img src="src/assets/img/eu-emblem.svg" alt="" width="81" height="54"> **Співфінансується Європейським Союзом / Co-funded by the European Union**
 
-Погляди та думки, висловлені тут, належать лише автору(-ам) і не обов'язково відображають погляди Європейського Союзу чи Європейського виконавчого агентства з питань освіти та культури (EACEA). Ні Європейський Союз, ні EACEA не несуть за них відповідальності.
+Проте висловлені погляди та думки належать лише автору(-ам) і не обов'язково відображають погляди Європейського Союзу чи Європейського виконавчого агентства з питань освіти та культури (EACEA). Ні Європейський Союз, ні EACEA не можуть нести за них відповідальність.
 
-Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Education and Culture Executive Agency (EACEA). Neither the European Union nor the granting authority can be held responsible for them.
+Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Education and Culture Executive Agency (EACEA). Neither the European Union nor EACEA can be held responsible for them.
 
 Технічна інструкція зі встановлення та редагування сайту: [install.md](install.md).
