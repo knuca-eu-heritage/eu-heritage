@@ -1,21 +1,19 @@
-url: conference-2028
-kind: conference
-number: 2
+url: webinar-4-participatory-planning
+kind: webinar
+number: 4
 title:
-  uk: "Відновлення спадщини в постраждалих від війни контекстах: досвід ЄС і
-    українська практика"
-  en: "Heritage recovery in war-affected contexts: EU experience and Ukrainian
-    practice"
-date: 2028-08-24
+  uk: "Партисипативне планування регенерації міст на основі культурної спадщини:
+    підходи ЄС"
+  en: "Participatory Planning for Heritage-Based Urban Regeneration: EU Approaches"
+date: 2028-04-27
 tentative: true
-format: hybrid
+format: online
 location:
-  uk: Київ, КНУБА, та онлайн
-  en: Kyiv, KNUCA, and online
+  uk: Онлайн
+  en: Online
 summary:
-  uk: Порівняльні підходи до післяконфліктної регенерації спадщини та інклюзивного
-    розвитку міст.
-  en: Comparative perspectives on post-conflict heritage regeneration and
-    inclusive urban development.
+  uk: Методики участі громади, стандарти доступності та інклюзивного дизайну в ЄС.
+  en: EU participatory planning methods, accessibility and inclusive design
+    standards.
 participants: 0
 draft: false
