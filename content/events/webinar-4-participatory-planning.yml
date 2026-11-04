@@ -1,23 +1,21 @@
-url: webinar-4-participatory-planning
-kind: webinar
-number: 4
-date: 2028-11-16
-tentative: true
-time: ""
-format: online
+url: conference-2028
+kind: conference
+number: 2
 title:
-  uk: "Партисипативне планування в регенерації на основі спадщини"
-  en: "Participatory planning in heritage-based urban regeneration"
+  uk: "Відновлення пошкодженої війною культурної спадщини: досвід ЄС і українська
+    практика "
+  en: "Recovery of War-Damaged Cultural Heritage: EU Experience and Ukrainian
+    Practice"
+date: 2028-06-06
+tentative: true
+format: hybrid
 location:
-  uk: "Онлайн"
-  en: "Online"
+  uk: Київ, КНУБА, та онлайн
+  en: Kyiv, KNUCA, and online
 summary:
-  uk: "Методики участі громади, стандарти доступності та інклюзивного дизайну в ЄС."
-  en: "EU participatory planning methods, accessibility and inclusive design standards."
-description: { uk: "", en: "" }
-programme: { uk: "", en: "" }
-registration_url: ""
+  uk: Порівняльні підходи до післяконфліктної регенерації спадщини та інклюзивного
+    розвитку міст.
+  en: Comparative perspectives on post-conflict heritage regeneration and
+    inclusive urban development.
 participants: 0
-report: { uk: "", en: "" }
-video_url: ""
-materials: []
+draft: false
