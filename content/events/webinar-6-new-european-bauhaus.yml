@@ -1,23 +1,19 @@
-url: webinar-6-new-european-bauhaus
-kind: webinar
-number: 6
-date: 2029-10-11
-tentative: true
-time: ""
-format: online
+url: conference-2029
+kind: conference
+number: 3
 title:
-  uk: "Новий європейський Баугауз: сталість, естетика та інклюзія в міському дизайні"
-  en: "The New European Bauhaus: sustainability, aesthetics and inclusion in urban design"
+  uk: "Європейські студії в освіті з містопланування: результати й перспективи"
+  en: "EU Studies in Urban Planning Education: Results and Prospects"
+date: 2029-06-05
+tentative: true
+format: hybrid
 location:
-  uk: "Онлайн"
-  en: "Online"
+  uk: Київ, КНУБА, та онлайн
+  en: Kyiv, KNUCA, and online
 summary:
-  uk: "Принципи NEB і регенерація з повагою до спадщини."
-  en: "NEB principles and heritage-sensitive regeneration."
-description: { uk: "", en: "" }
-programme: { uk: "", en: "" }
-registration_url: ""
+  uk: Підсумкова конференція модуля про інтеграцію студій ЄС у підготовку фахівців
+    з містопланування.
+  en: The Module's final conference on integrating EU studies into urban planning
+    curricula.
 participants: 0
-report: { uk: "", en: "" }
-video_url: ""
-materials: []
+draft: false
