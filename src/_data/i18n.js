@@ -133,8 +133,8 @@ export default {
   footer: {
     funded: { uk: "Співфінансується Європейським Союзом", en: "Co-funded by the European Union" },
     disclaimer: {
-      uk: "Співфінансується Європейським Союзом. Проте висловлені погляди та думки належать лише автору(-ам) і не обов'язково відображають погляди Європейського Союзу чи Європейського виконавчого агентства з питань освіти та культури (EACEA). Ні Європейський Союз, ні EACEA не можуть нести за них відповідальність.",
-      en: "Co-funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Education and Culture Executive Agency (EACEA). Neither the European Union nor EACEA can be held responsible for them.",
+      uk: "Фінансується Європейським Союзом. Проте висловлені погляди та думки належать лише автору(-ам) і не обов'язково відображають погляди Європейського Союзу чи Європейського виконавчого агентства з питань освіти та культури (EACEA). Ні Європейський Союз, ні EACEA не можуть нести за них відповідальність.",
+      en: "Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Education and Culture Executive Agency (EACEA). Neither the European Union nor EACEA can be held responsible for them.",
     },
     project: { uk: "Проєкт", en: "Project" },
     license: {
